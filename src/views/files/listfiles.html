@@ -1,0 +1,34 @@
+{% extends 'base/basefiles.htm' %}
+
+{% block titulo %} List Files {% endblock %}
+<link rel="icon" href="static/img/ico.ico">
+
+
+{% block contenido %}
+
+
+<div class="main">
+
+    {% for fil in fils %}
+
+    <div class="card" >
+        <img class="card-img-top" id="img" src="{{fil[6]}}" alt="Imagen">
+        <div class="card-body padcard">
+            <h5 class="card-title ">{{fil[2]}}</h5> <br>  <!-- Limitar nombre para mejor manejo de texto ._: -->
+           
+            <a href="/delete/{{fil[0]}}">
+                <i class="material-icons icon-delete">delete</i>
+            </a>
+            <a href="/update-file/{{fil[0]}}">
+                <i class="material-icons">mode_edit</i>
+            </a>
+        </div>
+    </div>
+
+
+
+    {% endfor %}
+
+</div>
+
+

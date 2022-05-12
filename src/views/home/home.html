@@ -1,0 +1,49 @@
+{% extends 'base/base.html' %}
+{% block titulo %} Home {% endblock %}
+
+{% block style %}
+<link rel="stylesheet" type="text/css" href="/static/css/stylefiles.css">
+{% endblock style %}
+
+
+{% block contenido %}
+
+<div class="main">
+
+    {% for fil in fils %}
+
+    
+    <div class="card" >
+        <img class="card-img-top" id="img" src="{{fil[6]}}" alt="Imagen">
+        <div class="card-body padcard sub ">
+            <h5 class="card-title " >{{fil[2]}}</h5> <br>  <!-- Limitar nombre para mejor manejo de texto ._: -->
+           
+         
+            <a class="edit" href="/update-file/{{fil[0]}}" style="text-decoration: none;">
+                <i class="material-icons">mode_edit</i>
+            </a>
+            <a class="download" href="/download/{{fil[0]}}"style="text-decoration: none;">
+                <i class="material-icons">download</i>
+            </a>
+          
+            <a class="view" href="/share/{{fil[0]}}"style="text-decoration: none;">
+                <i class="material-icons">preview</i>
+            </a> 
+            <a class="delete" href="/delete/{{fil[0]}}" style="text-decoration: none;" >
+                <i class="material-icons">delete</i>
+            </a> 
+         
+          
+                
+               
+
+        </div>
+    </div>
+
+
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}

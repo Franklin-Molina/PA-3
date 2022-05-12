@@ -1,0 +1,32 @@
+{% extends 'base/base.html' %}
+{% block titulo %} Home {% endblock %}
+
+{% block style %}
+<link rel="stylesheet" type="text/css" href="/static/css/stylefiles.css">
+{% endblock style %}
+
+
+{% block contenido %}
+
+<div class="main">
+
+    {% for fil in publicfiles %}
+
+    <div class="card" >
+        <img class="card-img-top" id="img" src="{{fil[6]}}" alt="Imagen">
+        <div class="card-body padcard">
+            <h5 class="card-title ">{{fil[2]}}</h5> <br>  <!-- Limitar nombre para mejor manejo de texto ._: -->           
+           <P>tipo de archivo: {{fil[4]}}</P>
+            <a href="/download/{{fil[0]}}">
+                <i class="material-icons">download</i>
+            </a>
+        </div>
+    </div>
+
+
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'base/base.html' %}
+
+{% block titulo %} Create {% endblock %} 
+<link rel="icon" href="static/img/ico.ico">
+
+ 
+ {% block contenido %}
+ <div class="login-page"> 
+<div class="form">
+  <h1 class="Create">Create</h1>
+  <form class="register-form" action="{{ url_for('createUser') }}" method="POST">
+    <input type="text" name="usuario" value="{{name}}" v placeholder="Name"/>      
+    <input type="text" name="email" value="{{email}}" placeholder="Email address"/>
+    <input type="password" name="password" value="{{password}}" placeholder="Password"/>
+    <div class="form-text">La contraseña debe tener numeros,caracter especial, minusculas, mayusculas y minimo  8 caracteres  </div>
+    <button>create</button>
+
+    <div class="mt-4">
+      {% with messages1 = get_flashed_messages()%}
+      {% if messages1 %}
+      <ul class="alert alert-danger">
+        {% for message1 in messages1%}
+       <li>  {{message1}}</li>
+        {% endfor%}
+      </ul>
+      {% endif%}
+      {% endwith %}
+
+      {% if notifi== True %}
+
+      <div class="alert alert-success">
+        Cuenta creada con exito!!
+      </div>
+      <div class="alert alert-info">
+        Se ha enviado un correo de confiarmacion a : {{notifiemail}}
+     
+      </div>
+
+      {%endif %}
+
+
+    </div>
+  
+
+
+
+
+    <p class="message">Already registered? <a href="/">Sign In</a></p>
+  </form>
+</div>
+
+{% endblock %}
+
+

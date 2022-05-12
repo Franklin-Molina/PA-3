@@ -1,0 +1,14 @@
+MYSQL_HOSTNAME=academia.c1mebdhdxytu.us-east-1.rds.amazonaws.com
+MYSQL_USERNAME=p6
+MYSQL_PASSWORD=ALrUBIaLYcHR
+MYSQL_DATABASE=p6
+MYSQL_PORT=3306
+
+SMPT_HOSTNAME=smtp.gmail.com:587
+SMPT_USERNAME=carlospaz2020@itp.edu.co
+SMPT_PASSWORD=Carlos22%
+
+
+
+GLOBAL_URL= http://127.0.0.1:5000
+

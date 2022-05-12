@@ -1,0 +1,63 @@
+{% extends 'base/base.html' %}
+{% block titulo %} Edit {% endblock %} 
+
+
+ 
+ {% block contenido %}
+ <div class="login-page"> 
+   
+<div class="form"> 
+  
+  <h1 class="Create">Edit File</h1>
+  <form class="register-form"   enctype="multipart/form-data" method="POST">
+    <input type="text" name="name" value="{{seefile[0][2]}}" placeholder="Name"/>      
+    <input type="file" name="file" value="{{seefile[0][6]}}" placeholder="File"/>
+
+    <div class="in">        
+      <div>
+
+        {% if status == "private" %}
+        <input  type="checkbox" name="status"  >   Public Acess  
+      
+
+        {% elif status == "public" %}
+        <input  type="checkbox" name="status"  checked > Public Acess  
+
+        {% endif %}
+      </div>        
+    </div>
+    
+    
+     <img class="img"  src="{{seefile[0][6]}}" alt="img">     
+    <button>Edit</button>
+
+    
+    <div class="mt-4">
+      {% with messages1 = get_flashed_messages()%}
+      {% if messages1 %}
+      <ul class="alert alert-danger">
+        {% for message1 in messages1%}
+       <li>  {{message1}}</li>
+        {% endfor%}
+      </ul>
+      {% endif%}
+      {% endwith %}
+    </div> 
+
+    {% if notifi == True %}
+    <div class="alert alert-success">
+     Edit Success full !!
+    </div>
+  
+    {%endif %}
+
+
+
+  
+  </form>
+</div>
+
+
+{% endblock %}
+
+

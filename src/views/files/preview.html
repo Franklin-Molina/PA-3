@@ -1,0 +1,73 @@
+{% extends 'base/base.html' %}
+
+{% block titulo %} Preview {% endblock %}
+
+{% block style %}
+<link rel="stylesheet" type="text/css" href="/static/css/preview.css">
+{% endblock style %}
+
+
+
+{% block contenido %}
+
+
+<div class="main">
+    {% for fil in seefiles %}
+    <div class="">
+        <img class="img" id="" src="{{fil[6]}}" alt="Imagen">
+        <h5 class="card-title ">{{fil[2]}}</h5> <br> <!-- Limitar nombre para mejor manejo de texto ._: -->
+        <p>Tipo archivo: {{fil[4]}}</p>
+        <p>Tamaño: {{fil[5]}}</p>
+        <div class="opciones">
+
+            <a class="download" href="/download/{{fil[0]}}">
+                <i class="material-icons">download</i>
+            </a>
+            <div id="copy" style="display: none;"> 
+               {{url_golbal}}/share/{{fil[0]}} 
+            </div>
+
+              
+                    <a onclick="copiar()" href="" >
+                        <i class="material-icons">share</i>
+
+                    </a>
+              
+
+            
+      
+
+
+        </div>
+
+
+
+    </div>
+
+    {% endfor %}
+</div>
+
+
+{% endblock %}
+
+{% block javascript %}
+
+<script>
+    function copiar() {       
+        // Crea un input para poder copiar el texto dentro       
+        let copyText = document.getElementById('copy').innerText 
+        const textArea = document.createElement('textarea');
+        textArea.textContent = copyText;
+        document.body.append(textArea);       
+        textArea.select();       
+        document.execCommand("copy");       
+        // Delete created Element       
+        textArea.remove() 
+      } 
+   
+
+
+</script>
+
+
+{% endblock %}

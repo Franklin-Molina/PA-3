@@ -1,0 +1,47 @@
+{% extends 'base/base.html' %}
+
+{% block titulo %} Create {% endblock %} 
+<link rel="icon" href="static/img/ico.ico">
+
+ 
+ {% block contenido %}
+ <div class="login-page"> 
+<div class="form">
+  <h1 class="Create">Create File</h1>
+  <form class="register-form" action="{{ url_for('createFile') }}"   enctype="multipart/form-data" method="POST">
+    <input type="text" name="name" value="{{name}}" placeholder="Name"/>      
+    <input type="file" name="file" value="{{namefile}}" placeholder="File"/>
+   
+
+    <button>Create</button>
+
+    <div class="mt-4">
+      {% with messages1 = get_flashed_messages()%}
+      {% if messages1 %}
+      <ul class="alert alert-danger">
+        {% for message1 in messages1%}
+       <li>  {{message1}}</li>
+        {% endfor%}
+      </ul>
+      {% endif%}
+      {% endwith %}
+    </div> 
+
+    {% if notifi== True %}
+
+    <div class="alert alert-success">
+      Success full !!
+    </div>
+  
+
+    {%endif %}
+
+
+
+  
+  </form>
+</div>
+
+{% endblock %}
+
+

@@ -1,0 +1,31 @@
+.main{
+  
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    width: 100vw;
+    display: grid;
+
+  
+}
+.img{
+
+    border-radius: 10px;
+    width: 500px;
+    height: 350px;
+   
+}
+.opciones{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-align: center;  
+   
+}
+.opciones a{
+    padding: 10px;
+
+}
+.download{
+    color: rgb(60, 255, 0);
+}
